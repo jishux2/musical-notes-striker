@@ -55,13 +55,13 @@ function loaded() {
 
 // 这是一个函数，用来播放下一个音频文件
 function playNext() {
-    // 获取上一个要播放的音频元素的索引
-    var previousIndex = (currentIndex - 1 + audioFiles.length) % audioFiles.length;
-    // 获取上一个要播放的音频元素
-    var previousAudio = audios[previousIndex];
-    // 暂停上一个要播放的音频元素
-    previousAudio.pause();
-    // 获取当前要播放的音频元素
+    // // 获取上一个要播放的音频元素的索引
+    // var previousIndex = (currentIndex - 1 + audioFiles.length) % audioFiles.length;
+    // // 获取上一个要播放的音频元素
+    // var previousAudio = audios[previousIndex];
+    // // 暂停上一个要播放的音频元素
+    // previousAudio.pause();
+    // // 获取当前要播放的音频元素
     var currentAudio = audios[currentIndex];
     // 播放当前要播放的音频元素
     currentAudio.play();
