@@ -21,6 +21,7 @@ function preload() {
         // 设置它的源为文件的网址
         audio.src = "https://jishux2.github.io/my-audio-files/" + audioFiles[i];
         // 添加一个事件监听器，当它加载完毕时，就调用loaded函数
+        audio.load();
         audio.addEventListener("canplaythrough", loaded);
         // 把它添加到数组中
         audios.push(audio);
