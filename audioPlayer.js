@@ -69,3 +69,6 @@ document.addEventListener("click", function () {
         alert("请等待所有音频都加载完毕再点击网页。");
     }
 });
+
+// 调用preload函数，开始预加载所有音频文件
+preload();
