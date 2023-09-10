@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>我的音频文件</title>
+</head>
+<body>
+  <h1>点击任何地方来播放一个音频文件</h1>
+  <script>
+    // 这是一个音频文件名的数组，你可以添加更多的文件名
+    var audioFiles = ["audio1.ogg", "audio2.flac"];
+    // 这是当前要播放的音频文件的索引
+    var currentIndex = 0;
+    // 这是一个音频元素，用来播放音频文件
+    var audio = new Audio();
+    // 这是一个函数，用来播放下一个音频文件
+    function playNext() {
+      // 从数组中获取下一个音频文件名
+      var nextFile = audioFiles[currentIndex];
+      // 设置音频元素的源为文件的网址
+      audio.src = "https://<your-username>.github.io/<your-repository-name>/" + nextFile;
+      // 播放音频元素
+      audio.play();
+      // 增加索引，或者如果到达数组的末尾就重置为零
+      currentIndex = (currentIndex + 1) % audioFiles.length;
+    }
+    // 给文档添加一个事件监听器，当它被点击时，就调用playNext函数
+    document.addEventListener("click", playNext);
+  </script>
+</body>
+</html>
