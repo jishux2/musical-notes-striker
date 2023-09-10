@@ -11,7 +11,7 @@ var currentIndex = 0;
 // 这是一个音频元素的数组，用来存储预加载的音频文件
 var audios = [];
 // 这是一个标志，用来表示是否所有音频都已经加载完毕
-var loaded = false;
+var isLoaded = false;
 
 // 这是一个函数，用来检查是否所有音频都已经加载完毕
 function loaded() {
@@ -27,7 +27,7 @@ function loaded() {
     // 如果计数等于音频元素的数量，就表示所有音频都已经加载完毕
     if (count == audios.length) {
         // 设置标志为真
-        loaded = true;
+        isLoaded = true;
         // 显示一个提示信息，告诉用户可以点击网页了
         document.body.innerHTML += "<p>所有音频都已经加载完毕，你可以点击网页来播放一个音频文件了。</p>";
     }
@@ -64,9 +64,10 @@ function playNext() {
     // 增加索引，或者如果到达数组的末尾就重置为零
     currentIndex = (currentIndex + 1) % audioFiles.length;
 }
+
 // 给文档添加一个事件监听器，当它被点击时，就检查是否所有音频都已经加载完毕，如果是就调用playNext函数，如果不是就显示一个提示信息
 document.addEventListener("click", function () {
-    if (loaded) {
+    if (isLoaded) {
         playNext();
     } else {
         alert("请等待所有音频都加载完毕再点击网页。");
