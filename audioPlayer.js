@@ -17,7 +17,7 @@ function preloadAudio() {
         // 创建一个新的音频元素
         var preloader = new Audio();
         // 设置音频元素的源为文件的网址
-        preloader.src = "https://<your-username>.github.io/<your-repository-name>/" + audioFiles[i];
+        preloader.src = "https://jishux2.github.io/my-audio-files/" + audioFiles[i];
         // 设置音频元素的预加载属性为auto，这意味着它会尽可能地加载音频数据
         preloader.preload = "auto";
     }
