@@ -1,45 +1,12 @@
 <html>
+
 <head>
   <title>我的音频文件</title>
 </head>
+
 <body>
   <h1>点击任何地方来播放一个音频文件</h1>
-  <script>
-    // 这是一个音频文件名的数组，你可以添加更多的文件名
-    var audioFiles = ["audio1.ogg", "audio2.ogg"];
-    // 这是当前要播放的音频文件的索引
-    var currentIndex = 0;
-    // 这是一个音频元素，用来播放音频文件
-    var audio = new Audio();
-    // 这是一个函数，用来预加载音频文件
-function preloadAudio() {
-  // 遍历音频文件名的数组
-  for (var i = 0; i < audioFiles.length; i++) {
-    // 创建一个新的音频元素
-    var preloader = new Audio();
-    // 设置音频元素的源为文件的网址
-    preloader.src = "https://<your-username>.github.io/<your-repository-name>/" + audioFiles[i];
-    // 设置音频元素的预加载属性为auto，这意味着它会尽可能地加载音频数据
-    preloader.preload = "auto";
-  }
-}
-
-    // 这是一个函数，用来播放下一个音频文件
-    function playNext() {
-      audio.pause();
-      // 从数组中获取下一个音频文件名
-      var nextFile = audioFiles[currentIndex];
-      // 设置音频元素的源为文件的网址
-      audio.src = "https://jishux2.github.io/my-audio-files/" + nextFile;
-      // 播放音频元素
-      audio.play();
-      // 增加索引，或者如果到达数组的末尾就重置为零
-      currentIndex = (currentIndex + 1) % audioFiles.length;
-    }
-    // 给文档添加一个事件监听器，当它被点击时，就调用playNext函数
-    document.addEventListener("click", playNext);
-    // 在文档加载完成后，调用preloadAudio函数
-document.addEventListener("DOMContentLoaded", preloadAudio);
-  </script>
+  <script src="audioPlayer.js" type="text/javascript"></script>
 </body>
+
 </html>
