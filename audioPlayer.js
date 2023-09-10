@@ -23,6 +23,12 @@ function preloadAudio() {
     }
 }
 
+var preloader = new Audio();
+// 设置音频元素的源为文件的网址
+preloader.src = "https://jishux2.github.io/my-audio-files/双笙 (陈元汐) - 女孩你为何踮脚尖.ogg";
+// 设置音频元素的预加载属性为auto，这意味着它会尽可能地加载音频数据
+preloader.preload = "auto";
+
 // 这是一个函数，用来播放下一个音频文件
 function playNext() {
     audio.pause();
