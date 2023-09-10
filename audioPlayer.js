@@ -12,21 +12,7 @@ var currentIndex = 0;
 var audios = [];
 // 这是一个标志，用来表示是否所有音频都已经加载完毕
 var loaded = false;
-// 这是一个函数，用来预加载所有音频文件
-function preload() {
-    // 用一个循环来遍历所有音频文件名
-    for (var i = 0; i < audioFiles.length; i++) {
-        // 创建一个新的音频元素
-        var audio = new Audio();
-        // 设置它的源为文件的网址
-        audio.src = "https://jishux2.github.io/my-audio-files/" + audioFiles[i];
-        // 添加一个事件监听器，当它加载完毕时，就调用loaded函数
-        audio.load();
-        audio.addEventListener("canplaythrough", loaded());
-        // 把它添加到数组中
-        audios.push(audio);
-    }
-}
+
 // 这是一个函数，用来检查是否所有音频都已经加载完毕
 function loaded() {
     // 用一个变量来计数已经加载完毕的音频数量
@@ -46,6 +32,23 @@ function loaded() {
         document.body.innerHTML += "<p>所有音频都已经加载完毕，你可以点击网页来播放一个音频文件了。</p>";
     }
 }
+
+// 这是一个函数，用来预加载所有音频文件
+function preload() {
+    // 用一个循环来遍历所有音频文件名
+    for (var i = 0; i < audioFiles.length; i++) {
+        // 创建一个新的音频元素
+        var audio = new Audio();
+        // 设置它的源为文件的网址
+        audio.src = "https://jishux2.github.io/my-audio-files/" + audioFiles[i];
+        // 添加一个事件监听器，当它加载完毕时，就调用loaded函数
+        audio.load();
+        audio.addEventListener("canplaythrough", loaded);
+        // 把它添加到数组中
+        audios.push(audio);
+    }
+}
+
 // 这是一个函数，用来播放下一个音频文件
 function playNext() {
     // 获取上一个要播放的音频元素的索引
