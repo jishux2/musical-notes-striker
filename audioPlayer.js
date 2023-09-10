@@ -22,7 +22,7 @@ function preload() {
         audio.src = "https://jishux2.github.io/my-audio-files/" + audioFiles[i];
         // 添加一个事件监听器，当它加载完毕时，就调用loaded函数
         audio.load();
-        audio.addEventListener("canplaythrough", loaded);
+        audio.addEventListener("canplaythrough", loaded());
         // 把它添加到数组中
         audios.push(audio);
     }
