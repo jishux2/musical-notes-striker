@@ -39,7 +39,6 @@ function playNext() {
     // 增加索引，或者如果到达数组的末尾就重置为零
     currentIndex = (currentIndex + 1) % audioFiles.length;
 }
-// 在文档加载完成后，调用preloadAudio函数
-document.addEventListener("DOMContentLoaded", preloadAudio);
+
 // 给文档添加一个事件监听器，当它被点击时，就调用playNext函数
 document.addEventListener("click", playNext);
