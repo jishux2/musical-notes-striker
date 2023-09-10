@@ -15,6 +15,10 @@ var isLoaded = false;
 
 // 这是一个函数，用来检查是否所有音频都已经加载完毕
 function loaded() {
+    // 如果所有音频都已经加载完毕，就跳过该函数，避免多次提示
+    if (isLoaded = true) {
+        return;
+    }
     // 用一个变量来计数已经加载完毕的音频数量
     var count = 0;
     // 用一个循环来遍历所有音频元素
