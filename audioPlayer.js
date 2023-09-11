@@ -1,5 +1,5 @@
 // 这是一个音频文件的数量，你可以修改它
-var audioCount = 12;
+var audioCount = 24;
 // 这是一个音频文件名的数组，用一个循环来生成它们
 var audioFiles = [];
 for (var i = 1; i <= audioCount; i++) {
