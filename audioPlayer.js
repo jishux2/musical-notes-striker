@@ -22,7 +22,7 @@ function preload() {
         // 创建一个新的音频元素
         var audio = new Audio();
         // 设置它的源为文件的网址
-        audio.src = "https://jishux2.github.io/my-audio-files/" + audioFiles[i];
+        audio.src = "https://jishux2.github.io/musical-notes-striker/" + audioFiles[i];
         // 添加一个事件监听器，当它加载完毕时，就调用loaded函数
         audio.load();
         audio.addEventListener("canplaythrough", loaded);
