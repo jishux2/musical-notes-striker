@@ -1,2 +1,2 @@
-# musical-notes-stiker
+musical-notes-striker
 a collection of audio clip contained

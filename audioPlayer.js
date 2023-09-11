@@ -12,6 +12,8 @@ var currentIndex = 0;
 var audios = [];
 // 这是一个标志，用来表示是否所有音频都已经加载完毕
 var isLoaded = false;
+// 这是上一个播放的音频文件
+var previousAudio = null;
 
 // 这是一个函数，用来预加载所有音频文件
 function preload() {
@@ -55,10 +57,11 @@ function loaded() {
 
 // 这是一个函数，用来播放下一个音频文件
 function playNext() {
-    var previousAudio = null;
     if (previousAudio) {
         // 暂停上一个要播放的音频元素
         previousAudio.pause();
+        // 将上一个音频元素的播放位置重置为零（保证从头播放）
+        previousAudio.currentTime = 0;
     }
     // 获取当前要播放的音频元素
     var currentAudio = audios[currentIndex];
