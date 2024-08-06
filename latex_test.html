@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MathJax测试</title>
+  <!-- 自定义MathJax的配置选项 -->
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      ignoreHtmlClass: 'tex2jax_ignore',
+      processHtmlClass: 'tex2jax_process'
+    },
+    startup: {
+      pageReady: () => {
+        return MathJax.startup.defaultPageReady().then(() => {
+          console.log('MathJax is ready.');
+        });
+      }
+    }
+  };
+  </script>
+  <!-- 引入MathJax的CDN链接 -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <!-- 设置网页的样式 -->
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  h1 {
+    color: blue;
+  }
+  p {
+    font-size: 18px;
+  }
+  </style>
+</head>
+<body>
+  <h1>MathJax测试</h1>
+  <p>这是一个网页，用来测试MathJax的功能。MathJax可以在网页上显示数学公式和符号，让你的网页更加美观和专业。</p>
+  <p>下面是一些数学表达式的例子，你可以看看MathJax是如何渲染它们的。</p>
+  <p>这是一个行内的例子：$ e^{i\pi} + 1 = 0 $，这是欧拉公式，也是数学中最美的公式之一。</p>
+  <p>这是一个行间的例子：$$ \int_{0}^{\infty} \frac{1}{x^2 + 1} dx = \frac{\pi}{2} $$，这是一个不定积分的例子，它的结果是一个常数。</p>
+  <p>这是一个矩阵的例子：\[
+  \begin{bmatrix}
+  1 & 2 & 3 \\
+  4 & 5 & 6 \\
+  7 & 8 & 9
+  \end{bmatrix}
+  \]，这是一个3x3的矩阵，它有9个元素。</p>
+  <p>这是一个希腊字母的例子：\( \alpha, \beta, \gamma, \delta, \epsilon, \zeta, \eta, \theta, \iota, \kappa, \lambda, \mu, \nu, \xi, \omicron, \pi, \rho, \sigma, \tau, \upsilon, \phi, \chi, \psi, \omega \)，这是数学中常用的24个希腊字母。</p>
+  <p>你可以在MathJax的官方文档中查看更多的数学表达式和符号的写法：https://docs.mathjax.org/en/latest/input/tex/index.html</p>
+</body>
+</html>
